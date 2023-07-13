@@ -8,7 +8,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      txtUsername: 'nhanng1',
+      txtUsername: 'nhannguyen',
       txtPassword: '123'
     };
   }

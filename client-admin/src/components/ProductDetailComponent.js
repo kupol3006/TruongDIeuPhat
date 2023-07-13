@@ -7,7 +7,7 @@ class ProductDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: [],
+      categories2: [],
       txtID: '',
       txtName: '',
       txtPrice: 0,
@@ -16,7 +16,7 @@ class ProductDetail extends Component {
     };
   }
   render() {
-    const cates = this.state.categories.map((cate) => {
+    const cates = this.state.categories2.map((cate) => {
       if (this.props.item != null) {
         return (<option key={cate._id} value={cate._id} selected={cate._id === this.props.item.category._id}>{cate.name}</option>);
       } else {
@@ -159,7 +159,7 @@ class ProductDetail extends Component {
 }
 
   componentDidMount() {
-    this.apiGetCategories();
+    this.apiGetCategory2();
   }
   componentDidUpdate(prevProps) {
     if (this.props.item !== prevProps.item) {
@@ -184,11 +184,11 @@ class ProductDetail extends Component {
     }
   }
   // apis
-  apiGetCategories() {
+  apiGetCategory2() {
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.get('/api/admin/categories', config).then((res) => {
+    axios.get('/api/admin/categories2', config).then((res) => {
       const result = res.data;
-      this.setState({ categories: result });
+      this.setState({ categories2: result });
     });
   }
 }

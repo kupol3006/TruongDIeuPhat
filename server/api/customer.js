@@ -6,6 +6,7 @@ const EmailUtil = require('../utils/EmailUtil');
 const JwtUtil = require('../utils/JwtUtil');
 // daos
 const CategoryDAO = require('../models/CategoryDAO');
+const Category2DAO = require('../models/Category2DAO')
 const ProductDAO = require('../models/ProductDAO');
 const CustomerDAO = require('../models/CustomerDAO');
 const OrderDAO = require('../models/OrderDAO');
@@ -13,6 +14,16 @@ const OrderDAO = require('../models/OrderDAO');
 router.get('/categories', async function (req, res) {
   const categories = await CategoryDAO.selectAll();
   res.json(categories);
+});
+// category2
+router.get('/categories2/category/:cid', JwtUtil.checkToken, async function(req,res){
+  const _cid = req.params.cid;
+  const categories_2 = await Category2DAO.selectByCatID(_cid);
+  res.json(categories_2);
+});
+router.get('/categories2', JwtUtil.checkToken, async function(req,res){
+  const categories_2 = await Category2DAO.selectAll();
+  res.json(categories_2);
 });
 // product
 router.get('/products/new', async function (req, res) {
@@ -25,7 +36,7 @@ router.get('/products/hot', async function (req, res) {
 });
 router.get('/products/category/:cid', async function (req, res) {
     const _cid = req.params.cid;
-    const products = await ProductDAO.selectByCatID(_cid);
+    const products = await ProductDAO.selectByCat2ID(_cid);
     res.json(products);
   });
 router.get('/products/search/:keyword', async function (req, res) {
@@ -37,7 +48,12 @@ router.get('/products/:id', async function (req, res) {
     const _id = req.params.id;
     const product = await ProductDAO.selectByID(_id);
     res.json(product);
-  });
+});
+router.get('/products/category/category/:cid', async function (req, res) {
+  const _cid = req.params.cid;
+  const products = await ProductDAO.selectByCatID(_cid);
+  res.json(products);
+});
 // customer
 router.post('/signup', async function (req, res) {
   const username = req.body.username;

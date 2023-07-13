@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import MyContext from '../contexts/MyContext';
 
-class CategoryDetail extends Component {
+class Category2Detail extends Component {
   static contextType = MyContext; // using this.context to access global state
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ class CategoryDetail extends Component {
   render() {
     return (
       <div className="float-right">
-        <h2 className="text-center">CATEGORY DETAIL</h2>
+        <h2 className="text-center">CATEGORY2 DETAIL</h2>
         <form>
           <table>
             <tbody>
@@ -49,32 +49,33 @@ class CategoryDetail extends Component {
   btnAddClick(e) {
     e.preventDefault();
     const name = this.state.txtName;
-
+    const category = this.props.categories._id;
     if (name) {
-      const cate2 = { name: name };
-      this.apiPostCategory(cate2);
+      const cate = { name: name, category: category };
+      this.apiPostCategory2(cate);
     } else {
       alert('Please input name');
     }
   }
   // apis
-  apiPostCategory(cate) {
+  apiPostCategory2(cate) {
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.post('/api/admin/categories', cate, config).then((res) => {
+    axios.post('/api/admin/categories2', cate, config).then((res) => {
       const result = res.data;
       if (result) {
         alert('OK BABY!');
-        this.apiGetCategories();
+        this.apiGetCategory2(this.props.categories._id);
       } else {
         alert('SORRY BABY!');
       }
     });
   }
-  apiGetCategories() {
+  apiGetCategory2() {
+    const cid = this.props.categories._id;
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.get('/api/admin/categories', config).then((res) => {
+    axios.get('/api/admin/categories2/category/' +cid, config).then((res) => {
       const result = res.data;
-      this.props.updateCategories(result);
+      this.props.updateCategory2(result);
     });
   }
   btnUpdateClick(e) {
@@ -83,19 +84,19 @@ class CategoryDetail extends Component {
     const name = this.state.txtName;
     if (id && name) {
       const cate = { name: name };
-      this.apiPutCategory(id, cate);
+      this.apiPutCategory2(id, cate);
     } else {
       alert('Please input id and name');
     }
   }
   // apis
-  apiPutCategory(id, cate) {
+  apiPutCategory2(id, cate) {
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.put('/api/admin/categories/' + id, cate, config).then((res) => {
+    axios.put('/api/admin/categories2/' + id, cate, config).then((res) => {
       const result = res.data;
       if (result) {
         alert('OK BABY!');
-        this.apiGetCategories();
+        this.apiGetCategory2();
       } else {
         alert('SORRY BABY!');
       }
@@ -106,24 +107,24 @@ class CategoryDetail extends Component {
     if (window.confirm('ARE YOU SURE?')) {
       const id = this.state.txtID;
       if (id) {
-        this.apiDeleteCategory(id);
+        this.apiDeleteCategory2(id);
       } else {
         alert('Please input id');
       }
     }
   }
   // apis
-  apiDeleteCategory(id) {
+  apiDeleteCategory2(id) {
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.delete('/api/admin/categories/' + id, config).then((res) => {
+    axios.delete('/api/admin/categories2/' + id, config).then((res) => {
       const result = res.data;
       if (result) {
         alert('OK BABY!');
-        this.apiGetCategories();
+        this.apiGetCategory2();
       } else {
         alert('SORRY BABY!');
       }
     });
   }
 }
-export default CategoryDetail;
+export default Category2Detail;

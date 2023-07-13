@@ -6,7 +6,7 @@ app.listen(PORT, ()=> {
 });
 const bodyParsers = require('body-parser');
 app.use(bodyParsers.json({limit : '10mb'}));
-app.use(bodyParsers.urlencoded({extends: true, limit :'10mb'}));
+app.use(bodyParsers.urlencoded({extended: true, limit :'10mb'}));
 
 app.get('/hello',(req,res)=>{
     res.json({message: 'Hello from server'});

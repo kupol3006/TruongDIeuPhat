@@ -51,13 +51,18 @@ const ProductDAO = {
       }
       return products;
     },
-    async selectByCatID(_cid) {
+    async selectByCat2ID(_cid) {
       const query = { 'category._id': _cid };
       const products = await Models.Product.find(query).exec();
       return products;
     },
     async selectByKeyword(keyword) {
       const query = { name: { $regex: new RegExp(keyword, "i") } };
+      const products = await Models.Product.find(query).exec();
+      return products;
+    },
+    async selectByCatID(_cid) {
+      const query = { 'category.category._id': _cid };
       const products = await Models.Product.find(query).exec();
       return products;
     }

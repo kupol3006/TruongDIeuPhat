@@ -6,6 +6,7 @@ const EmailUtil = require('../utils/EmailUtil');
 // daos
 const AdminDAO = require('../models/AdminDAO');
 const CategoryDAO = require('../models/CategoryDAO');
+const Category2DAO = require('../models/Category2DAO')
 const ProductDAO = require('../models/ProductDAO');
 const OrderDAO = require('../models/OrderDAO');
 const CustomerDAO = require('../models/CustomerDAO');
@@ -52,6 +53,36 @@ router.delete('/categories/:id', JwtUtil.checkToken, async function (req, res) {
   const result = await CategoryDAO.delete(_id);
   res.json(result);
 });
+//category2
+router.get('/categories2', JwtUtil.checkToken, async function(req,res){
+  const categories_2 = await Category2DAO.selectAll();
+  res.json(categories_2);
+});
+router.post('/categories2', JwtUtil.checkToken, async function (req, res) {
+  const name = req.body.name;
+  const cid = req.body.category;
+  const category = await CategoryDAO.selectByID(cid);
+  const category2 = { name: name, category: category };
+  const result = await Category2DAO.insert(category2);
+  res.json(result);
+});
+router.put('/categories2/:id', JwtUtil.checkToken, async function (req, res) {
+  const _id = req.params.id;
+  const name = req.body.name;
+  const category = { _id: _id, name: name };
+  const result = await Category2DAO.update(category);
+  res.json(result);
+});
+router.delete('/categories2/:id', JwtUtil.checkToken, async function (req, res) {
+  const _id = req.params.id;
+  const result = await Category2DAO.delete(_id);
+  res.json(result);
+});
+router.get('/categories2/category/:cid', JwtUtil.checkToken, async function(req,res){
+  const _cid = req.params.cid;
+  const categories_2 = await Category2DAO.selectByCatID(_cid);
+  res.json(categories_2);
+})
 // product
 router.get('/products', JwtUtil.checkToken, async function (req, res) {
   // get data
@@ -73,7 +104,7 @@ router.post('/products', JwtUtil.checkToken, async function (req, res) {
   const cid = req.body.category;
   const image = req.body.image;
   const now = new Date().getTime(); // milliseconds
-  const category = await CategoryDAO.selectByID(cid);
+  const category = await Category2DAO.selectByID(cid);
   const product = { name: name, price: price, image: image, cdate: now, category: category };
   const result = await ProductDAO.insert(product);
   res.json(result);
@@ -85,7 +116,7 @@ router.put('/products/:id', JwtUtil.checkToken, async function (req, res) {
   const cid = req.body.category;
   const image = req.body.image;
   const now = new Date().getTime(); // milliseconds
-  const category = await CategoryDAO.selectByID(cid);
+  const category = await Category2DAO.selectByID(cid);
   const product = { _id: _id, name: name, price: price, image: image, cdate: now, category: category };
   const result = await ProductDAO.update(product);
   res.json(result);

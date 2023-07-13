@@ -1,8 +1,8 @@
 const MyConstants = {
-    DB_SERVER: 'clustersgp.i3pkmcl.mongodb.net',
-    DB_USER: 'nhannguyen2703',
-    DB_PASS: '1234567nhan',
-    DB_DATABASE: 'shoppingonline',
+    DB_SERVER: 'clustersgp.akk88jw.mongodb.net',
+    DB_USER: 'teambida',
+    DB_PASS: '1234567teambida',
+    DB_DATABASE: 'webbida',
     EMAIL_USER: 'nhannguyen27032002@gmail.com', // Microsoft mail service
     EMAIL_PASS: 'SIUNHANGAO12@n123',
     JWT_SECRET: 'cothieuhoang',

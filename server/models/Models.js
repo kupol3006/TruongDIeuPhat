@@ -11,6 +11,12 @@ const CategorySchema = mongoose.Schema({
     name: String,
 }, {versionKey: false});
 
+const Category2Schema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    name: String,
+    category: CategorySchema,
+}, {versionKey: false});
+
 const CustomerSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: String,
@@ -28,7 +34,7 @@ const ProductSchema = mongoose.Schema({
     price: Number,
     image: String,
     cdate: Number,
-    category: CategorySchema
+    category: Category2Schema
 }, {versionKey: false});
 
 const ItemSchema = mongoose.Schema({
@@ -47,7 +53,9 @@ const OrderSchema = mongoose.Schema({
 
 const Admin = mongoose.model('Admin', AdminSchema);
 const Category = mongoose.model('Category', CategorySchema);
+const Category2 = mongoose.model('Category2', Category2Schema);
 const Customer = mongoose.model('Customer', CustomerSchema);
 const Product = mongoose.model('Product',ProductSchema);
 const Order = mongoose.model('Order',OrderSchema);
-module.exports = {Admin, Category, Customer, Product, Order};
+module.exports = {Admin, Category, Category2, Customer, Product, Order};
+
