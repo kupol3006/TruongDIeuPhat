@@ -15,16 +15,21 @@ class Product extends Component {
       return (
         <div key={item._id} className="inline">
           <figure>
-            <Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" /></Link>
-            <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
+            <div className='subImg'><Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} alt="" /></Link></div>
+            <figcaption className=''>{item.name}</figcaption>
+            <figcaption className=''>{item.price}đ</figcaption>
           </figure>
         </div>
       );
     });
     return (
-      <div className="text-center">
-        <h2 className="text-center">LIST PRODUCTS</h2>
-        {prods}
+      <div className="mainContent">
+        <div className='products'>
+          <h2 className="text-center">LIST PRODUCTS</h2>
+          <div className='align-center'>
+            {prods}
+          </div>
+        </div>
       </div>
     );
   }
@@ -34,16 +39,16 @@ class Product extends Component {
       this.apiGetProductsByCatID(params.cid);
     }
     else if (params.keyword) {
-        this.apiGetProductsByKeyword(params.keyword);
+      this.apiGetProductsByKeyword(params.keyword);
     }
   }
   componentDidUpdate(prevProps) { // changed: /product/...
     const params = this.props.params;
     if (params.cid && params.cid !== prevProps.params.cid) {
-        this.apiGetProductsByCatID(params.cid);
+      this.apiGetProductsByCatID(params.cid);
     }
     else if (params.keyword && params.keyword !== prevProps.params.keyword) {
-        this.apiGetProductsByKeyword(params.keyword);
+      this.apiGetProductsByKeyword(params.keyword);
     }
   }
   // apis

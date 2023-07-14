@@ -15,34 +15,46 @@ class Home extends Component {
       return (
         <div key={item._id} className="inline">
           <figure>
-            <Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" /></Link>
-            <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
+            <div className='subImg'><Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} alt="" /></Link></div>
+            <figcaption className="">{item.name}</figcaption>
+            <figcaption className="">{item.price}đ</figcaption>
           </figure>
         </div>
       );
     });
-    const hotprods = this.state.hotprods.map((item) => {
-      return (
-        <div key={item._id} className="inline">
-          <figure>
-            <Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" /></Link>
-            <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
-          </figure>
-        </div>
-      );
-    });
+    // const hotprods = this.state.hotprods.map((item) => {
+    //     return (
+    //         <div key={item._id} className="inline">
+    //             <figure>
+    //                 <Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" /></Link>
+    //                 <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
+    //             </figure>
+    //         </div>
+    //     );
+    // });
     return (
-      <div>
+      <div className='mainContent'>
+        <div className='banner'>
+          <img src='https://bidathanhson.vn/wp-content/uploads/2023/03/banner-bi-da-thanh-son.jpg' alt="" />
+          <div className='noidung'>
+            <h1>XƯỞNG SẢN XUẤT BIDA THANH SƠN</h1>
+            <div className='phu'>
+              <h4></h4>
+              <h3>CƠ SỞ SẢN XUẤT BÀN BI DA VÀ PHỤ KIỆN BIDA LỚN NHẤT TẠI HỒ CHÍ MINH</h3>
+            </div>
+            <Link to=''>Về chúng tôi</Link>
+          </div>
+        </div>
+        <h2 className="text-center">NEW PRODUCTS</h2>
         <div className="align-center">
-          <h2 className="text-center">NEW PRODUCTS</h2>
           {newprods}
         </div>
-        {this.state.hotprods.length > 0 ?
-          <div className="align-center">
-            <h2 className="text-center">HOT PRODUCTS</h2>
-            {hotprods}
-          </div>
-          : <div />}
+        {/* {this.state.hotprods.length > 0 ?
+                    <div className="align-center">
+                        <h2 className="text-center">HOT PRODUCTS</h2>
+                        {hotprods}
+                    </div>
+                    : <div />} */}
       </div>
     );
   }

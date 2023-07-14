@@ -1,6 +1,10 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 /* styles.css */
 .body-customer {
-  width: 1150px;
+  width: 100%;
   height: fit-content;
   margin: 0px auto;
 }
@@ -9,17 +13,10 @@
   height: fit-content;
   margin: 0px auto;
 }
-div.inline {
-  display: inline-block;
-}
-figure.caption-right {
-  display: flex;
-  align-items: center;
-}
-.align-center {
-  width: fit-content;
-  margin: 0px auto;
-}
+
+
+
+
 .align-valign-center {
   position: absolute;
   top: 50%;
@@ -27,9 +24,6 @@ figure.caption-right {
   transform: translate(-50%, -50%);
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
-}
-.text-center {
-  text-align: center;
 }
 span.link {
   cursor: pointer;
@@ -127,3 +121,427 @@ tr:not(:first-child):hover.datatable {
     transform: rotate(360deg);
   }
 }
+/* Product-Phat */
+.mainContent{
+  width: 100%;
+  margin: auto;
+  margin-top: 70px;
+  padding-bottom: 150px;
+  background-color: #EDEFF4;
+}
+.mainContent .text-center h2{
+  /* text-align: center; */
+  font-weight: bold;
+}
+.products {
+  padding-top: 50px;
+}
+.text-center{
+  width: 1058px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 10px 0;
+  padding-left: 20px;
+  background-color: white;
+  border-left: #467EC1 5px solid;
+}
+.align-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 1083px;
+  margin: 0px auto;
+  background-color: white;
+}
+div.inline {
+  width: 250px;
+  height: 330px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -1px 0px 14px 5px gainsboro;
+}
+.subImg{
+  width: 250px;
+  overflow: hidden;
+}
+.inline figure a img{
+  width: 250px;
+  height: 265px;
+  transition: 0.6s;
+}
+.inline figure a img:hover{
+  transform: scale(1.2);
+  transition: 0.6s;
+}
+.inline figure figcaption{
+  font-weight: bold;
+}
+.inline figure figcaption:nth-child(3){
+  color: #D30000;
+  margin-top: 15px;
+}
+.banner{
+  width: 100%;
+  position: relative;
+}
+.banner img{
+  width: 100%;
+}
+.noidung{
+  width: 35%;
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  color: white;
+}
+.noidung a{
+  display: block;
+  width: 100px;
+  margin: 20px 0;
+  margin-top: 60px;
+  padding: 15px 20px;
+  text-decoration: none;
+  border: 1px white solid;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.noidung a:hover{
+  
+  background-color: #467EC1;
+}
+.phu{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+}
+.phu h4{
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 5px;
+  background-color: #ffcc00;
+  border-radius: 10px;
+}
+.phu h3{
+  position: absolute;
+  left: 50px;
+}
+.proDetail{
+  width: 1083px;
+  height: 600px;
+  margin: auto;
+  background-color: white;
+}
+.mau{
+  width: 100%;
+  height: 50px;
+  background-color: #EDEFF4;
+}
+.detail{
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+}
+.slider-master{
+  width: 45%;
+  margin-right: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.btn svg{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  z-index: 4;
+}
+#phai svg{
+  left: 90%;
+}
+.slider-main{
+  display: flex;
+  /* background-color: gray; */
+  transform: translateX(0);
+  transition: 0.4s linear;
+}
+.slider-main img{
+  width: 490px;
+  height: 540px;
+}
+.detail figcaption h2{
+  color: #467EC1;
+  font-weight: bold;
+  padding: 10px 0;
+}
+.detail figcaption h2:nth-child(2){
+  color: #D30000;
+  border-top: 2px black solid;
+}
+.detail figcaption input{
+  display: block;
+  font-size: 18px;
+  margin: 20px 0;
+}
+.detail figcaption input:nth-child(4){
+  padding: 8px 23px;
+  background-color: #FDBF2C;
+  color: white;
+  border: none;
+}
+.detail figcaption input:nth-child(4):hover{
+  background-color: #CA9923;
+}
+/* End Product */
+/* Footer - Phat */
+.master-footer {
+  width: 100%;
+  background-color: #070A0C;
+  font-family: Calibri, sans-serif;
+}
+
+.main-footer {
+  width: 100%;
+  height: 270px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+
+.first {
+  width: 285px;
+  height: 270px;
+  background-image: url(https://bidathanhson.vn/wp-content/uploads/2023/03/footer.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.first img {
+  width: 200px;
+}
+
+.first p {
+  text-align: center;
+  font-size: 16px;
+  margin: 0 15px;
+}
+
+.first h3 {
+  width: 100px;
+  color: #FDBF2C;
+  text-align: center;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: #477EC1 solid 1px;
+}
+
+.second {
+  width: 285px;
+  height: 270px;
+  color: #F2F3F3;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.second ul {
+  height: 240px;
+  margin-left: 20px;
+}
+
+.second ul li {
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.second ul li a {
+  text-decoration: none;
+  color: #F2F3F3;
+}
+
+.third {
+  width: 285px;
+  height: 270px;
+  color: #F2F3F3;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.third ul {
+  height: 240px;
+}
+
+.third ul li {
+  list-style: none;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.third ul li svg {
+  float: left;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #467EC1;
+  color: #FDBF2C;
+  margin-right: 5px;
+}
+
+.third ul li h5 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.sub-footer {
+  width: 100%;
+  padding: 20px 0;
+
+}
+
+.sub-footer h4 {
+  color: whitesmoke;
+  text-align: center;
+}
+/* End Footer */
+/* Menu - Quy */
+.border-bottom {
+  height: 30px;
+  background-color: #1d252d;
+  display: flex;
+  align-items: center;
+}
+
+.border-bottom a {
+  text-decoration: none;
+  color: #707279;
+}
+
+.border-bottom .float-left ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding-left: 120px;
+}
+
+.border-bottom .float-right {
+  height: 100px;
+}
+
+/* Middle Header */
+.midMenu {
+  display: flex;
+  gap: 40px;
+  /* justify-content:center ; */
+  height: 100px;
+  width: 100%; 
+  background-color: #2a343d;
+  align-items: center;
+  padding-left: 380Px;
+}
+
+.hotLine p:first-child {
+  color: #707279;
+}
+
+.emailSupport p:first-child{
+  color: #707279;
+}
+
+.midMenu p {
+  color: azure;
+  font-size: 16px;
+}
+
+.midMenu .search .keyword{
+  height: 43px;
+  width: 340px;
+  border-radius: 5px;
+  /* background-color: #707279; */
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.midMenu .emailSupport {
+  padding-right: 100Px;
+}
+.search .submit {
+  height: 43px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Bottom Header */
+
+
+#bot-menu {
+  display: Flex;
+  list-style: None;
+  margin: 0;
+  padding: 0;
+  background-color: #2a343d;
+  margin-top: 1px;
+}
+
+.botMenu #bot-menu {
+  padding-left: 360px;
+}
+
+#bot-menu li {
+  position: relative;
+}
+
+
+#bot-menu li a {
+  color: #fff;
+  display: block;
+  padding: 18Px 20px;
+  text-decoration: None;
+}
+
+#bot-menu .subnav {
+  position: absolute;
+  background-color: #282c34;
+  padding: 8px 0px;
+  list-style: none;
+  width: 200px;
+  border: 1px solid rgb(107, 104, 104) ;
+  display: none;
+  z-index: 5;
+}
+
+#bot-menu li:hover .subnav {
+  display: block;
+}
+
+
+#bot-menu .subnav a {
+  padding: 12px 18px;
+  border-bottom: 1px solid rgb(107, 104, 104) ;
+}
+
+#bot-menu .subnav li:hover a {
+  border-bottom: 1px solid rgb(63, 252, 6) ;
+
+} 
+
+#bot-menu .subnav li:last-child a {
+  border: none;
+}
+
+/* svg {
+  position: absolute;
+  right: 0;
+  top:0;
+  padding-top:21px ;
+} */
+/* End Menu */
