@@ -11,22 +11,22 @@ class Active extends Component {
   }
   render() {
     return (
-      <div className="align-center">
-        <h2 className="text-center">ACTIVE ACCOUNT</h2>
+      <div className="page">
+        <h2 className="label">ACTIVE ACCOUNT</h2>
         <form>
-          <table className="align-center">
+          <table className="form">
             <tbody>
               <tr>
-                <td>ID</td>
-                <td><input type="text" value={this.state.txtID} onChange={(e) => { this.setState({ txtID: e.target.value }) }} /></td>
+                {/* <td>ID</td> */}
+                <td><input className="box" placeholder="ID" type="text" value={this.state.txtID} onChange={(e) => { this.setState({ txtID: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Token</td>
-                <td><input type="text" value={this.state.txtToken} onChange={(e) => { this.setState({ txtToken: e.target.value }) }} /></td>
+                {/* <td>Token</td> */}
+                <td><input className="box" placeholder="TOKEN" value={this.state.txtToken} onChange={(e) => { this.setState({ txtToken: e.target.value }) }} /></td>
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" value="ACTIVE" onClick={(e) => this.btnActiveClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="ACTIVE" onClick={(e) => this.btnActiveClick(e)} /></td>
               </tr>
             </tbody>
           </table>

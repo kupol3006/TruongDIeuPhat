@@ -16,38 +16,38 @@ router.get('/categories', async function (req, res) {
   res.json(categories);
 });
 // category2
-router.get('/categories2/category/:cid', JwtUtil.checkToken, async function(req,res){
+router.get('/categories2/category/:cid', async function (req, res) {
   const _cid = req.params.cid;
   const categories_2 = await Category2DAO.selectByCatID(_cid);
   res.json(categories_2);
 });
-router.get('/categories2', JwtUtil.checkToken, async function(req,res){
+router.get('/categories2', async function (req, res) {
   const categories_2 = await Category2DAO.selectAll();
   res.json(categories_2);
 });
 // product
 router.get('/products/new', async function (req, res) {
-  const products = await ProductDAO.selectTopNew(3);
+  const products = await ProductDAO.selectTopNew(4);
   res.json(products);
 });
 router.get('/products/hot', async function (req, res) {
-  const products = await ProductDAO.selectTopHot(3);
+  const products = await ProductDAO.selectTopHot(4);
   res.json(products);
 });
 router.get('/products/category/:cid', async function (req, res) {
-    const _cid = req.params.cid;
-    const products = await ProductDAO.selectByCat2ID(_cid);
-    res.json(products);
-  });
+  const _cid = req.params.cid;
+  const products = await ProductDAO.selectByCat2ID(_cid);
+  res.json(products);
+});
 router.get('/products/search/:keyword', async function (req, res) {
-    const keyword = req.params.keyword;
-    const products = await ProductDAO.selectByKeyword(keyword);
-    res.json(products);
+  const keyword = req.params.keyword;
+  const products = await ProductDAO.selectByKeyword(keyword);
+  res.json(products);
 });
 router.get('/products/:id', async function (req, res) {
-    const _id = req.params.id;
-    const product = await ProductDAO.selectByID(_id);
-    res.json(product);
+  const _id = req.params.id;
+  const product = await ProductDAO.selectByID(_id);
+  res.json(product);
 });
 router.get('/products/category/category/:cid', async function (req, res) {
   const _cid = req.params.cid;
@@ -128,7 +128,7 @@ router.post('/checkout', JwtUtil.checkToken, async function (req, res) {
   const total = req.body.total;
   const items = req.body.items;
   const customer = req.body.customer;
-  const order = { cdate: now, total: total, status: 'PENDING', customer: customer, item: items };
+  const order = { cdate: now, total: total, status: 'PENDING', customer: customer, items: items };
   const result = await OrderDAO.insert(order);
   res.json(result);
 });

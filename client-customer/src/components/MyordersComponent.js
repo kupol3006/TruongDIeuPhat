@@ -16,7 +16,7 @@ class Myorders extends Component {
     if (this.context.token === '') return (<Navigate replace to='/login' />);
     const orders = this.state.orders.map((item) => {
       return (
-        <tr key={item._id} className="datatable" onClick={() => this.trItemClick(item)}>
+        <tr key={item._id} className="table-result" onClick={() => this.trItemClick(item)}>
           <td>{item._id}</td>
           <td>{new Date(item.cdate).toLocaleString()}</td>
           <td>{item.customer.name}</td>
@@ -27,9 +27,9 @@ class Myorders extends Component {
       );
     });
     if (this.state.order) {
-      var items = this.state.order.item.map((item, index) => {
+      var items = this.state.order.items.map((item, index) => {
         return (
-          <tr key={item.product._id} className="datatable">
+          <tr key={item.product._id} className="table-result">
             <td>{index + 1}</td>
             <td>{item.product._id}</td>
             <td>{item.product.name}</td>
@@ -43,38 +43,34 @@ class Myorders extends Component {
     }
     return (
       <div>
-        <div className="align-center">
-          <h2 className="text-center">ORDER LIST</h2>
-          <table className="datatable" border="1">
-            <tbody>
-              <tr className="datatable">
-                <th>ID</th>
-                <th>Creation date</th>
-                <th>Cust.name</th>
-                <th>Cust.phone</th>
-                <th>Total</th>
-                <th>Status</th>
-              </tr>
-              {orders}
-            </tbody>
+        <div className="page">
+          <h2 className="label">ORDER LIST</h2>
+          <table className="table" border="1">
+            <tr className="table-database">
+              <th>ID</th>
+              <th>Creation date</th>
+              <th>Cust.name</th>
+              <th>Cust.phone</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+            {orders}
           </table>
         </div>
         {this.state.order ?
-          <div className="align-center">
-            <h2 className="text-center">ORDER DETAIL</h2>
-            <table className="datatable" border="1">
-              <tbody>
-                <tr className="datatable">
-                  <th>No.</th>
-                  <th>Prod.ID</th>
-                  <th>Prod.name</th>
-                  <th>Image</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Amount</th>
-                </tr>
-                {items}
-              </tbody>
+          <div className="page">
+            <h2 className="label">ORDER DETAIL</h2>
+            <table className="table" border="1">
+              <tr className="table-database">
+                <th>No.</th>
+                <th>Prod.ID</th>
+                <th>Prod.name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+              </tr>
+              {items}
             </table>
           </div>
           : <div />}

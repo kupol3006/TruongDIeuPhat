@@ -11,6 +11,7 @@ class Product extends Component {
     };
   }
   render() {
+    // console.log(this.state.products);
     const prods = this.state.products.map((item) => {
       return (
         <div key={item._id} className="inline">
@@ -25,7 +26,7 @@ class Product extends Component {
     return (
       <div className="mainContent">
         <div className='products'>
-          <h2 className="text-center">LIST PRODUCTS</h2>
+          <h2 className="text-center">Danh sách sản phẩm</h2>
           <div className='align-center'>
             {prods}
           </div>
@@ -34,8 +35,12 @@ class Product extends Component {
     );
   }
   componentDidMount() { // first: /product/...
+    console.log(this.props.item);
     const params = this.props.params;
-    if (params.cid) {
+    if (params.cid && this.props.item === "category2") {
+      this.apiGetProductsByCat2ID(params.cid);
+    }
+    else if (params.cid) {
       this.apiGetProductsByCatID(params.cid);
     }
     else if (params.keyword) {
@@ -44,7 +49,10 @@ class Product extends Component {
   }
   componentDidUpdate(prevProps) { // changed: /product/...
     const params = this.props.params;
-    if (params.cid && params.cid !== prevProps.params.cid) {
+    if (params.cid && params.cid !== prevProps.params.cid && this.props.item === "category2") {
+      this.apiGetProductsByCat2ID(params.cid);
+    }
+    else if (params.cid && params.cid !== prevProps.params.cid) {
       this.apiGetProductsByCatID(params.cid);
     }
     else if (params.keyword && params.keyword !== prevProps.params.keyword) {

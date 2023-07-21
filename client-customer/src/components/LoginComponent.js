@@ -14,22 +14,22 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="align-center">
-        <h2 className="text-center">CUSTOMER LOGIN</h2>
+      <div className="page">
+        <h2 className="label">CUSTOMER LOGIN</h2>
         <form>
-          <table className="align-center">
+          <table className="form">
             <tbody>
               <tr>
-                <td>Username</td>
-                <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
+                {/* <td className="label-style">Username</td> */}
+                <td><input className="box" placeholder="Tên đăng nhập" type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Password</td>
-                <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
+                {/* <td className="label-style">Password</td> */}
+                <td><input className="box" placeholder="Mật khẩu" type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
               </tr>
             </tbody>
           </table>

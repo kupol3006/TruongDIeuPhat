@@ -4,18 +4,18 @@ const AdminSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: String,
     password: String,
-}, {versionKey: false});
+}, { versionKey: false });
 
 const CategorySchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: String,
-}, {versionKey: false});
+}, { versionKey: false });
 
 const Category2Schema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: String,
     category: CategorySchema,
-}, {versionKey: false});
+}, { versionKey: false });
 
 const CustomerSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -26,7 +26,7 @@ const CustomerSchema = mongoose.Schema({
     email: String,
     active: Number,
     token: String,
-}, {versionKey: false});
+}, { versionKey: false });
 
 const ProductSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -35,12 +35,12 @@ const ProductSchema = mongoose.Schema({
     image: String,
     cdate: Number,
     category: Category2Schema
-}, {versionKey: false});
+}, { versionKey: false });
 
 const ItemSchema = mongoose.Schema({
     product: ProductSchema,
     quantity: Number
-}, {versionKey: false, _id: false});
+}, { versionKey: false, _id: false });
 
 const OrderSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -48,14 +48,14 @@ const OrderSchema = mongoose.Schema({
     total: Number,
     status: String,
     customer: CustomerSchema,
-    item: [ItemSchema]
-}, {versionKey: false});
+    items: [ItemSchema]
+}, { versionKey: false });
 
 const Admin = mongoose.model('Admin', AdminSchema);
 const Category = mongoose.model('Category', CategorySchema);
 const Category2 = mongoose.model('Category2', Category2Schema);
 const Customer = mongoose.model('Customer', CustomerSchema);
-const Product = mongoose.model('Product',ProductSchema);
-const Order = mongoose.model('Order',OrderSchema);
-module.exports = {Admin, Category, Category2, Customer, Product, Order};
+const Product = mongoose.model('Product', ProductSchema);
+const Order = mongoose.model('Order', OrderSchema);
+module.exports = { Admin, Category, Category2, Customer, Product, Order };
 

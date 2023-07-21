@@ -43,8 +43,10 @@ class ProductDetail extends Component {
               <figcaption>
                 <h2>{prod.name}</h2>
                 <h2>{prod.price}đ</h2>
-                <input type="number" min="1" max="99" value={this.state.txtQuantity} onChange={(e) => { this.setState({ txtQuantity: e.target.value }) }} />
-                <input type="submit" value="Thêm vào giỏ hàng" onClick={(e) => this.btnAdd2CartClick(e)} />
+                <div className='dathang'>
+                  <input type="number" min="1" max="99" value={this.state.txtQuantity} onChange={(e) => { this.setState({ txtQuantity: e.target.value }) }} />
+                  <input type="submit" value="Thêm vào giỏ hàng" onClick={(e) => this.btnAdd2CartClick(e)} />
+                </div>
               </figcaption>
             </figure>
           </div>

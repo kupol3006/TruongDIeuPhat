@@ -24,12 +24,11 @@ class Category extends Component {
         </tr>
       );
     });
-    const cates2 = this.state.category2.map((item)=>{
+    const cates2 = this.state.category2.map((item) => {
       return (
         <tr key={item._id} className="datatable" onClick={() => this.trCategory2Click(item)}>
           <td>{item._id}</td>
           <td>{item.name}</td>
-          <td>{item.category.name}</td>
         </tr>
       );
     });
@@ -58,26 +57,25 @@ class Category extends Component {
                 <tr className="datatable">
                   <th>ID</th>
                   <th>Name</th>
-                  <th>Category</th>
                 </tr>
                 {cates2}
               </tbody>
             </table>
             <div className="float-left" />
-            <Category2Detail item={this.state.item2Selected} updateCategory2={this.updateCategory2}  categories={this.state.itemSelected}/>
+            <Category2Detail item={this.state.item2Selected} updateCategory2={this.updateCategory2} categories={this.state.itemSelected} />
             <div className="float-clear" />
           </div>
           : <div />}
-          
+
       </div>
 
     );
-}
+  }
   updateCategories = (categories) => { // arrow-function
     this.setState({ categories: categories });
   }
-  updateCategory2 = (category2)=>{
-    this.setState({category2: category2})
+  updateCategory2 = (category2) => {
+    this.setState({ category2: category2 })
   }
   componentDidMount() {
     this.apiGetCategories();
@@ -87,8 +85,8 @@ class Category extends Component {
     this.setState({ itemSelected: item, category2: [], item2Selected: null });
     this.apiGetCategory2(item._id);
   }
-  trCategory2Click(item){
-    this.setState({item2Selected:item});
+  trCategory2Click(item) {
+    this.setState({ item2Selected: item });
   }
   // apis
   apiGetCategories() {
@@ -98,7 +96,7 @@ class Category extends Component {
       this.setState({ categories: result });
     });
   }
-  apiGetCategory2(cid){
+  apiGetCategory2(cid) {
     const config = { headers: { 'x-access-token': this.context.token } };
     axios.get('/api/admin/categories2/category/' + cid, config).then((res) => {
       const result = res.data;

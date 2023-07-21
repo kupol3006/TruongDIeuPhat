@@ -21,8 +21,8 @@ class Footer extends Component {
             <div class="master-footer">
                 <div class="main-footer">
                     <div class="first">
-                        <img src="https://bidathanhson.vn/wp-content/uploads/2023/03/logo-bida-thanh-son.png" alt="" />
-                        <p>Bida Thanh Sơn chuyên cung cấp các loại phụ kiện bida chuyên nghiệp , chất lượng, giá cả hợp lý, với
+                        <img src="/logoVL_red.jpg" alt="" />
+                        <p>Bida Văn Lang chuyên cung cấp các loại phụ kiện bida chuyên nghiệp , chất lượng, giá cả hợp lý, với
                             phương châm uy tín mang lại thương hiệu.</p>
                         <h3>0903160860</h3>
                     </div>
@@ -69,7 +69,7 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div class="sub-footer">
-                    <h4>Copyright 2023 © Bida Thanh Sơn - Phụ Kiện Bida - Xưởng Sản Xuất Bida Lớn Nhất Tại Hồ Chí Minh
+                    <h4>Copyright 2023 © Bida Văn Lang - Phụ Kiện Bida - Xưởng Sản Xuất Bida Lớn Nhất Tại Hồ Chí Minh
                         - website designer: congdongweb.com</h4>
                 </div>
             </div>
