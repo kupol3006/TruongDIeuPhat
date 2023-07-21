@@ -142,7 +142,9 @@ class Menu extends Component {
     } else {
       midMenu.style.display = 'flex';
       layer.style.display = 'none';
-      mainContent.style.marginTop = '0px';
+      if (mainContent) {
+        mainContent.style.marginTop = '0px';
+      }
     }
   }
   btnSubMenu() {
