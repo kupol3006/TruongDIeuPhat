@@ -14,9 +14,9 @@ class Tem extends Component {
                     </svg>
                         {this.context.token === '' ?
                             <ul className='subInfor1'>
-                                <li><Link to='/login'>Login</Link></li>
-                                <li><Link to='/signup'>Sign-up</Link></li>
-                                <li><Link to='/active'>Active</Link></li>
+                                <li><Link to='/login'>Đăng nhập</Link></li>
+                                <li><Link to='/signup'>Đăng ký</Link></li>
+                                <li><Link to='/active'>Xác thực</Link></li>
                             </ul>
                             :
                             <ul className='subInfor1'>
@@ -28,7 +28,7 @@ class Tem extends Component {
                                         <li><Link to='/myorders'>My orders</Link></li>
                                     </ul>
                                 </li>
-                                <li><Link to='/home' onClick={() => this.lnkLogoutClick()}>Logout</Link></li>
+                                <li><Link to='/home' onClick={() => this.lnkLogoutClick()}>Đăng xuất</Link></li>
                             </ul>
                         }</Link>
                 </div>
