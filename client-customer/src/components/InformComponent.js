@@ -16,7 +16,7 @@ class Inform extends Component {
               <ul className='subInfor'>
                 <li><Link to='/login'>Đăng nhập</Link></li>
                 <li><Link to='/signup'>Đăng ký</Link></li>
-                <li><Link to='/active'>Xác nhận</Link></li>
+                <li><Link to='/active'>Xác thực</Link></li>
               </ul>
               :
               <ul className='subInfor'>
