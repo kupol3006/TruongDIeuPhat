@@ -28,7 +28,7 @@ class Inform extends Component {
                     <li><Link to='/myorders'>Đơn hàng</Link></li>
                   </ul>
                 </li>
-                <li><Link to='/home' onClick={() => this.lnkLogoutClick()}>Logout</Link></li>
+                <li><Link to='/home' onClick={() => this.lnkLogoutClick()}>Đăng xuất</Link></li>
               </ul>
             }</Link>
         </div>
