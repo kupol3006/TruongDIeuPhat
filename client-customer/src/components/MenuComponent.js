@@ -67,11 +67,11 @@ class Menu extends Component {
           <Link to='/'><img src='/logoVL_blue.jpg' alt="" /></Link>
           <div className="hotLine">
             <p>HOTLINE</p>
-            <p>0903 160 860</p>
+            <p>123456789</p>
           </div>
           <div className="emailSupport">
             <p>EMAIL SUPPORT</p>
-            <p>thanhson.club@gmail.com</p>
+            <p>vlubilliards@gmail.com</p>
           </div>
           <div className="ok">
             <form className="search">
