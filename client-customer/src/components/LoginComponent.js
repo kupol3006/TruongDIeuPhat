@@ -15,7 +15,7 @@ class Login extends Component {
   render() {
     return (
       <div className="page">
-        <h2 className="label">CUSTOMER LOGIN</h2>
+        <h2 className="label">ĐĂNG NHẬP</h2>
         <form>
           <table className="form">
             <tbody>
