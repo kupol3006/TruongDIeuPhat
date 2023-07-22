@@ -752,6 +752,9 @@ div.inline {
   background-color: white;
   display: none;
 }
+.ssInfor.show {
+  display: block; /* Lớp ẩn */
+}
 .main-inform .subInfor .ssInfor li{
   width: 100%;
   padding: 8px 10px;
@@ -782,6 +785,104 @@ div.inline {
   left: 45%;
 }
 /* End information */
+/* Tem */
+.information1{
+  /* width: 450px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.information1 a{
+  text-decoration: none;
+  color: white;
+}
+.main-inform1{
+  position: relative;
+}
+
+.main-inform1 .subInfor1{
+  width: 200px;
+  display: none;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 120%;
+  right: -120%;
+  background-color: white;
+  position: absolute;
+  box-shadow: -1px 0px 14px 5px rgba(0, 0, 0, 0.208);
+  z-index: 4;
+}
+.main-inform1 a{
+  padding: 10px;
+}
+.main-inform1 a:hover .subInfor1{
+  display: block;
+}
+
+.main-inform1 .subInfor1 li{
+  list-style: none;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgb(107, 104, 104) ;
+}
+.main-inform1 .subInfor1 li:last-child{
+  border: none;
+}
+.main-inform1 .subInfor1 li a{
+  position: relative;
+  transition: 0.2s;
+}
+.main-inform1 .subInfor1 li:hover a{
+  color: #D30000;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+.main-inform1 .subInfor1 li a{
+  color: gray;
+}
+.main-inform1 .subInfor1 li svg{
+  position: absolute;
+  top: 33%;
+  left: 95%;
+  transform: rotate(0deg);
+  transition: 0.6s;
+}
+.ssInfor1{
+  width: 100%;
+  background-color: white;
+  display: none;
+}
+
+.main-inform1 .subInfor1 .ssInfor1 li{
+  width: 100%;
+  padding: 8px 10px;
+  border-bottom: none;
+}
+.main-inform1 .subInfor1 .ssInfor1 li a{
+  color: gray;
+  margin: 0;
+  transition: 0.2s;
+}
+.main-inform1 .subInfor1 .ssInfor1 li:hover a{
+  color: #D30000;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+.subInfor3{
+  width: 40px;
+  margin-left: 70px;
+  position: relative;
+}
+.subInfor3 h5{
+  padding: 0px 4px;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+/* end Tem */
 /* login style chung */
 
 .submit-all {

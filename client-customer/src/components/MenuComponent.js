@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withRouter from '../utils/withRouter';
 import Inform from './InformComponent';
+import Tem from './TemComponent';
 
 
 class Menu extends Component {
@@ -59,7 +60,7 @@ class Menu extends Component {
                 {cates1}
               </ul>
             </nav>
-            <Inform />
+            <Tem />
           </div>
         </div>
         <div className='midMenu' id='midMenu'>
