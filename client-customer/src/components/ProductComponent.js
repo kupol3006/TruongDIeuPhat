@@ -18,7 +18,7 @@ class Product extends Component {
           <figure>
             <div className='subImg'><Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} alt="" /></Link></div>
             <figcaption className=''>{item.name}</figcaption>
-            <figcaption className=''>{item.price}đ</figcaption>
+            <figcaption className=''>{item.price.toLocaleString('vi-VN')}đ</figcaption>
           </figure>
         </div>
       );

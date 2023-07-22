@@ -42,7 +42,7 @@ class ProductDetail extends Component {
               </div>
               <figcaption>
                 <h2>{prod.name}</h2>
-                <h2>{prod.price}đ</h2>
+                <h2>{prod.price.toLocaleString('vi-VN')}đ</h2>
                 <div className='dathang'>
                   <input type="number" min="1" max="99" value={this.state.txtQuantity} onChange={(e) => { this.setState({ txtQuantity: e.target.value }) }} />
                   <input type="submit" value="Thêm vào giỏ hàng" onClick={(e) => this.btnAdd2CartClick(e)} />

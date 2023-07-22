@@ -839,7 +839,11 @@ tbody{
 }
 
 .page {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 530px;
 }
 
 .table-database th{
@@ -1208,5 +1212,7 @@ td {
   .detail figcaption .dathang input:first-child{
     padding: 0 20px;
   }
-
+  .page {
+    margin-top: 60px;
+  }
 }
