@@ -30,13 +30,13 @@ class Mycart extends Component {
           <tr className="table-database">
             <th>No.</th>
             <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Image</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Amount</th>
-            <th>Action</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Hình ảnh</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tổng</th>
+            <th>Trạng thái</th>
           </tr>
           {mycart}
           <tr className="table-result">
