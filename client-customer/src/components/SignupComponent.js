@@ -15,7 +15,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="page">
-        <h2 className="label">SIGN-UP</h2>
+        <h2 className="label">ĐĂNG KÝ</h2>
         <form>
           <table className="form">
             <tbody>
