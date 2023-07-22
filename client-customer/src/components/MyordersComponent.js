@@ -44,31 +44,31 @@ class Myorders extends Component {
     return (
       <div>
         <div className="page">
-          <h2 className="label">ORDER LIST</h2>
+          <h2 className="label">DANH SÁCH ĐƠN HÀNG</h2>
           <table className="table" border="1">
             <tr className="table-database">
               <th>ID</th>
-              <th>Creation date</th>
+              <th>Ngày tạo</th>
               <th>Cust.name</th>
               <th>Cust.phone</th>
-              <th>Total</th>
-              <th>Status</th>
+              <th>Tổng cộng</th>
+              <th>Trạng thái</th>
             </tr>
             {orders}
           </table>
         </div>
         {this.state.order ?
           <div className="page">
-            <h2 className="label">ORDER DETAIL</h2>
+            <h2 className="label">CHI TIẾT ĐƠN HÀNG</h2>
             <table className="table" border="1">
               <tr className="table-database">
                 <th>No.</th>
                 <th>Prod.ID</th>
                 <th>Prod.name</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Amount</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
               </tr>
               {items}
             </table>
