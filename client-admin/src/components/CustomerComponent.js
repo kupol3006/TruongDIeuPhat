@@ -45,7 +45,7 @@ class Customer extends Component {
       );
     });
     if (this.state.order) {
-      var items = this.state.order.item.map((item, index) => {
+      var items = this.state.order.items.map((item, index) => {
         return (
           <tr key={item.product._id} className="datatable">
             <td>{index + 1}</td>
