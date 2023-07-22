@@ -945,6 +945,7 @@ tbody{
   justify-content: center;
   align-items: center;
   height: 530px;
+  margin:50px;
 }
 
 .table-database th{
