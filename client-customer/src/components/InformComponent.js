@@ -14,9 +14,9 @@ class Inform extends Component {
           </svg>
             {this.context.token === '' ?
               <ul className='subInfor'>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/signup'>Sign-up</Link></li>
-                <li><Link to='/active'>Active</Link></li>
+                <li><Link to='/login'>Đăng nhập</Link></li>
+                <li><Link to='/signup'>Đăng ký</Link></li>
+                <li><Link to='/active'>Xác nhận</Link></li>
               </ul>
               :
               <ul className='subInfor'>
