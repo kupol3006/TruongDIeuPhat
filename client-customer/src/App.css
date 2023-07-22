@@ -499,12 +499,86 @@ div.inline {
   z-index: 0;
 }
 /* Bottom Header */
+/* .bot1 */
+.bot1{
+  width: 100%;
+  border-top: 1px gray solid;
+  background-color: #2A343D;
+  position: fixed;
+  display: none;
+  z-index: 6;
+}
+.botMenu2{
+  width: 1100px;
+  margin: auto;
+  background-color: #2A343D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+#bot-menu2 {
+  width: 500px;
+  /* margin-right: 380px; */
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+#bot-menu2 li {
+  position: relative;
+  display: block;
+  padding: 18px 20px;
+}
+
+#bot-menu2 li a{
+  color: white;
+  text-decoration: none;
+}
+
+#bot-menu2 .subnav1 {
+  width: 200px;
+  position: absolute;
+  background-color: white;
+  top: 95%;
+  list-style: none;
+  border: 1px solid rgb(107, 104, 104) ;
+  display: none;
+  z-index: 5;
+}
+#bot-menu2 li:hover .subnav1 {
+  display: block;
+  z-index: 9;
+}
+#bot-menu2 .subnav1 li {
+  position: relative;
+  padding: 13px 20px;
+  border-bottom: 1px solid rgb(107, 104, 104) ;
+}
+#bot-menu2 .subnav1 li a{
+  color: gray;
+  transition: 0.2s;
+}
+#bot-menu2 .subnav1 li:hover a{
+  color: #467EC1;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+.botMenu2 li{
+  position: relative;
+}
+.botMenu2 #bot-menu2 li svg {
+  position: absolute;
+  top: 37%;
+  right: 0%;
+  padding-bottom: 10px;
+}
+/* end .bot1 */
 .bot{
   width: 100%;
   border-top: 1px gray solid;
   background-color: #2A343D;
-  z-index: 6;
+  z-index: 7;
 }
+
 .botMenu{
   width: 1100px;
   margin: auto;
@@ -803,7 +877,7 @@ td {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 6;
+    z-index: 5;
   }
   .container{
     width: 250px;

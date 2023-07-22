@@ -17,7 +17,6 @@ class Menu extends Component {
 
   render() {
     const cates = this.state.categories.map((item) => {
-      // console.log(this.state.categories2)
       return (
         <li key={item._id}><Link to={'/product/category/' + item._id} item="">{item.name}  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z" />
@@ -34,15 +33,35 @@ class Menu extends Component {
         </li>
       );
     });
+    const cates1 = this.state.categories.map((item) => {
+      return (
+        <li key={item._id}><Link to={'/product/category/' + item._id} item="">{item.name}  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z" />
+        </svg></Link>
+          <ul class="subnav1">
+            {this.state.categories2.map((item2) => {
+              if (item._id === item2.category._id) {
+                return (
+                  <li key={item2._id}><Link to={'/product/category2/' + item2._id}>{item2.name}</Link></li>
+                )
+              }
+            })}
+          </ul>
+        </li>
+      );
+    });
     return (
       <div className='menu'>
-        {/* <div className="border-bottom">
-          <div className="float-left">
-            <ul className="bot-menu">
-              <li className="menu"><Link to='/'>Trang chủ</Link></li>
-            </ul>
+        <div className='bot1'>
+          <div className="botMenu2">
+            <nav className='container2'>
+              <ul id="bot-menu2">
+                {cates1}
+              </ul>
+            </nav>
+            <Inform />
           </div>
-        </div> */}
+        </div>
         <div className='midMenu' id='midMenu'>
           <Link to='/'><img src='/logoVL_blue.jpg' alt="" /></Link>
           <div className="hotLine">
@@ -107,49 +126,34 @@ class Menu extends Component {
     window.addEventListener('resize', this.handleResize);
   }
   handleScroll = (e) => {
-    const midMenu = document.querySelector('.midMenu');
-    const bot = document.querySelector('.bot');
-    const mainContent = document.querySelector('.mainContent');
+    const bot1 = document.querySelector('.bot1');
     const x = window.innerWidth;
-    if (x > 1024) {
-      if (e.srcElement.scrollingElement.scrollTop >= 101) {
-        midMenu.style.display = 'none';
-        bot.style.position = 'fixed';
-        if (mainContent) {
-          mainContent.style.marginTop = '159px';
-        }
+    if (e.srcElement.scrollingElement.scrollTop >= 101 && x > 1024) {
+      if (bot1) {
+        bot1.style.display = 'block';
       }
-      else {
-        midMenu.style.display = 'flex';
-        bot.style.position = 'static';
-        if (mainContent) {
-          mainContent.style.marginTop = '0px';
-        }
-      }
-    } else {
-      midMenu.style.display = 'none';
-      if (mainContent) {
-        mainContent.style.marginTop = '70px';
+    }
+    else {
+      if (bot1) {
+        bot1.style.display = 'none';
       }
     }
   }
   handleResize = (e) => {
-    const midMenu = document.querySelector('.midMenu');
-    const mainContent = document.querySelector('.mainContent');
+    const bot1 = document.querySelector('.bot1');
     const layer = document.querySelector('.layer');
     const container = document.querySelector('.container');
     const x = window.innerWidth;
-    if (x < 1024) {
-      midMenu.style.display = 'none';
-      if (mainContent) {
-        mainContent.style.marginTop = '70px';
+    if (x > 1024) {
+      if (bot1) {
+        bot1.style.display = 'none';
       }
-    } else {
-      midMenu.style.display = 'flex';
       layer.style.display = 'none';
       container.style.left = '-100%';
-      if (mainContent) {
-        mainContent.style.marginTop = '0px';
+    }
+    else {
+      if (bot1) {
+        bot1.style.display = 'none';
       }
     }
   }

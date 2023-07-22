@@ -35,7 +35,7 @@ class Product extends Component {
     );
   }
   componentDidMount() { // first: /product/...
-    console.log(this.props.item);
+    // console.log(this.props.item);
     const params = this.props.params;
     if (params.cid && this.props.item === "category2") {
       this.apiGetProductsByCat2ID(params.cid);
