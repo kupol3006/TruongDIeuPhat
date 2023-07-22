@@ -19,7 +19,7 @@ class Myprofile extends Component {
     if (this.context.token === '') return (<Navigate replace to='/login' />);
     return (
       <div className="page">
-        <h2 className="label">MY PROFILE</h2>
+        <h2 className="label">HỒ SƠ</h2>
         <form>
           <table className="form">
             <tbody>
