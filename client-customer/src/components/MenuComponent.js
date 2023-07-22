@@ -135,6 +135,7 @@ class Menu extends Component {
     const midMenu = document.querySelector('.midMenu');
     const mainContent = document.querySelector('.mainContent');
     const layer = document.querySelector('.layer');
+    const container = document.querySelector('.container');
     const x = window.innerWidth;
     if (x < 1024) {
       midMenu.style.display = 'none';
@@ -142,6 +143,7 @@ class Menu extends Component {
     } else {
       midMenu.style.display = 'flex';
       layer.style.display = 'none';
+      container.style.left = '-100%';
       if (mainContent) {
         mainContent.style.marginTop = '0px';
       }
