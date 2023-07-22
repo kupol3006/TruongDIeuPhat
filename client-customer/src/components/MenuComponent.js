@@ -128,7 +128,9 @@ class Menu extends Component {
       }
     } else {
       midMenu.style.display = 'none';
-      mainContent.style.marginTop = '70px';
+      if (mainContent) {
+        mainContent.style.marginTop = '70px';
+      }
     }
   }
   handleResize = (e) => {
@@ -139,7 +141,9 @@ class Menu extends Component {
     const x = window.innerWidth;
     if (x < 1024) {
       midMenu.style.display = 'none';
-      mainContent.style.marginTop = '70px';
+      if (mainContent) {
+        mainContent.style.marginTop = '70px';
+      }
     } else {
       midMenu.style.display = 'flex';
       layer.style.display = 'none';
