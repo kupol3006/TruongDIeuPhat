@@ -45,7 +45,7 @@ class Myprofile extends Component {
               </tr>
               <tr>
                 {/* <td></td> */}
-                <td><input className="submit-all" type="submit" value="UPDATE" onClick={(e) => this.btnUpdateClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="CẬP NHẬT" onClick={(e) => this.btnUpdateClick(e)} /></td>
               </tr>
             </tbody>
           </table>
@@ -87,7 +87,7 @@ class Myprofile extends Component {
       const customer = { username: username, password: password, name: name, phone: phone, email: email };
       this.apiPutCustomer(this.context.customer._id, customer);
     } else {
-      alert('Please input username and password and name and phone and email');
+      alert('VUI LÒNG NHẬP TÊN TÀI KHOẢN, MẬT KHẨU, TÊN, SỐ ĐIỆN THOẠI VÀ EMAIL!');
     }
   }
   // apis
@@ -96,10 +96,10 @@ class Myprofile extends Component {
     axios.put('/api/customer/customers/' + id, customer, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('THÀNH CÔNG!');
         this.context.setCustomer(result);
       } else {
-        alert('SORRY BABY!');
+        alert('THẤT BẠI!');
       }
     });
   }

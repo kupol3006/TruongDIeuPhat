@@ -8,8 +8,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      txtUsername: 'nhannguyen',
-      txtPassword: '123'
+      txtUsername: '',
+      txtPassword: ''
     };
   }
   render() {
@@ -29,7 +29,7 @@ class Login extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input className="submit-all" type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="ĐĂNG NHẬP" onClick={(e) => this.btnLoginClick(e)} /></td>
               </tr>
             </tbody>
           </table>
