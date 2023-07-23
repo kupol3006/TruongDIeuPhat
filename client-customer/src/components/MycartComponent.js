@@ -18,14 +18,14 @@ class Mycart extends Component {
           <td>{item.product.price}</td>
           <td>{item.quantity}</td>
           <td>{item.product.price * item.quantity}</td>
-          <td><span className="link" onClick={() => this.lnkRemoveClick(item.product._id)}>Remove</span></td>
+          <td><span className="link" onClick={() => this.lnkRemoveClick(item.product._id)}>XÓA</span></td>
 
         </tr>
       );
     });
     return (
       <div className="page">
-        <h2 className="label">ITEM LIST</h2>
+        <h2 className="label">DANH SÁCH MẶT HÀNG</h2>
         <table className="table" border="1">
           <tr className="table-database">
             <th>No.</th>
@@ -44,7 +44,7 @@ class Mycart extends Component {
             <td></td>
             <td>Total</td>
             <td>{CartUtil.getTotal(this.context.mycart)}</td>
-            <td><span className="link" onClick={() => this.lnkCheckoutClick()}>CHECKOUT</span></td>
+            <td><span className="link" onClick={() => this.lnkCheckoutClick()}>THANH TOÁN</span></td>
           </tr>
         </table>
       </div>
@@ -60,7 +60,7 @@ class Mycart extends Component {
     }
   }
   lnkCheckoutClick() {
-    if (window.confirm('ARE YOU SURE?')) {
+    if (window.confirm('XÁC NHẬN THỰC HIỆN THANH TOÁN?')) {
       if (this.context.mycart.length > 0) {
         const total = CartUtil.getTotal(this.context.mycart);
         const items = this.context.mycart;
@@ -71,7 +71,7 @@ class Mycart extends Component {
           this.props.navigate('/login');
         }
       } else {
-        alert('Your cart is empty');
+        alert('GIỎ HÀNG ĐANG RỖNG!');
       }
     }
   }
@@ -82,11 +82,11 @@ class Mycart extends Component {
     axios.post('/api/customer/checkout', body, config).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('THÀNH CÔNG!');
         this.context.setMycart([]);
         this.props.navigate('/home');
       } else {
-        alert('SORRY BABY!');
+        alert('THẤT BẠI!');
       }
     });
   }
