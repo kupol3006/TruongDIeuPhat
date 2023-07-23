@@ -12,7 +12,7 @@ class Active extends Component {
   render() {
     return (
       <div className="page">
-        <h2 className="label">ACTIVE ACCOUNT</h2>
+        <h2 className="label">XÁC THỰC TÀI KHOẢN</h2>
         <form>
           <table className="form">
             <tbody>
@@ -26,7 +26,7 @@ class Active extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input className="submit-all" type="submit" value="ACTIVE" onClick={(e) => this.btnActiveClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="XÁC THỰC" onClick={(e) => this.btnActiveClick(e)} /></td>
               </tr>
             </tbody>
           </table>
@@ -42,7 +42,7 @@ class Active extends Component {
     if (id && token) {
       this.apiActive(id, token);
     } else {
-      alert('Please input id and token');
+      alert('VUI LÒNG NHẬP ID VÀ TOKEN!');
     }
   }
   // apis
@@ -51,9 +51,9 @@ class Active extends Component {
     axios.post('/api/customer/active', body).then((res) => {
       const result = res.data;
       if (result) {
-        alert('OK BABY!');
+        alert('THÀNH CÔNG!');
       } else {
-        alert('SORRY BABY!');
+        alert('THẤT BẠI!');
       }
     });
   }
