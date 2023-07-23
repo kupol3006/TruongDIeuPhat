@@ -74,9 +74,9 @@ class ProductDetail extends Component {
         mycart[index].quantity += quantity;
       }
       this.context.setMycart(mycart);
-      alert('OK BABY!');
+      alert('THÀNH CÔNG!');
     } else {
-      alert('Please input quantity');
+      alert('VUI LÒNG NHẬP SỐ LƯỢNG');
     }
   }
   // apis
