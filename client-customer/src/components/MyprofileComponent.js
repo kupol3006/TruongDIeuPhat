@@ -87,7 +87,7 @@ class Myprofile extends Component {
       const customer = { username: username, password: password, name: name, phone: phone, email: email };
       this.apiPutCustomer(this.context.customer._id, customer);
     } else {
-      alert('Please input username and password and name and phone and email');
+      alert('VUI LÒNG NHẬP TÊN TÀI KHOẢN, MẬT KHẨU, TÊN, SỐ ĐIỆN THOẠI VÀ EMAIL!');
     }
   }
   // apis
