@@ -41,7 +41,7 @@ class Signup extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input className="submit-all" type="submit" value="SIGN-UP" onClick={(e) => this.btnSignupClick(e)} /></td>
+                <td><input className="submit-all" type="submit" value="ĐĂNG KÝ" onClick={(e) => this.btnSignupClick(e)} /></td>
               </tr>
             </tbody>
           </table>
@@ -61,7 +61,7 @@ class Signup extends Component {
       const account = { username: username, password: password, name: name, phone: phone, email: email };
       this.apiSignup(account);
     } else {
-      alert('Please input username and password and name and phone and email');
+      alert('VUI LÒNG NHẬP TÊN TÀI KHOẢN, MẬT KHẨU, TÊN, SỐ ĐIỆN THOẠI VÀ EMAIL!');
     }
   }
   // apis
